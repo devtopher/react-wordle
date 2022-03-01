@@ -8,7 +8,8 @@ export default function Home() {
   const {
     charactersTypedByUser,
     characterEntered,
-    deleteChar
+    deleteChar,
+    submit
   } = useTophersData();
 
   return <div style={{
@@ -18,6 +19,6 @@ export default function Home() {
   }}>
     <NavBar />
     <GameBoard characters={charactersTypedByUser} />
-    <Keyboard deleteChar={deleteChar} characterEntered={characterEntered}/>
+    <Keyboard submit={submit}deleteChar={deleteChar} characterEntered={characterEntered}/>
   </div>
 }
