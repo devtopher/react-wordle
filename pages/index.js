@@ -19,6 +19,6 @@ export default function Home() {
   }}>
     <NavBar />
     <GameBoard characters={charactersTypedByUser} />
-    <Keyboard submit={submit}deleteChar={deleteChar} characterEntered={characterEntered}/>
+    <Keyboard submit={submit} deleteChar={deleteChar} characterEntered={characterEntered}/>
   </div>
 }

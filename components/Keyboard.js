@@ -9,6 +9,7 @@ export default function Keyboard(props) {
           
         } else if(e.which == 13){
           props.submit()
+          
         } else if (e.which !==0 ){
           const character = String.fromCharCode(e.which)
           props.characterEntered(character)
@@ -16,9 +17,9 @@ export default function Keyboard(props) {
       }
       window.addEventListener("keyup", handler)
       return () => window.removeEventListener("keyup", handler)
-    }, [])
+    }, [props.submit])
 
     return <div>
-
+      {props.characters}
     </div>
 }
