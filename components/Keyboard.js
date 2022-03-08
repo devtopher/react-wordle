@@ -12,7 +12,7 @@ export default function Keyboard(props) {
           
         } else if (e.which !==0 ){
           const character = String.fromCharCode(e.which)
-          props.characterEntered(character)
+          props.characterEntered(character.toLowerCase())
         }
       }
       window.addEventListener("keyup", handler)

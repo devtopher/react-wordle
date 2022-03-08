@@ -2,13 +2,31 @@ import React, {useState} from "react"
 
 export default function useTophersData() {
     const [chars, setChars] = useState([])
-    const [guess, setGuess] = useState([])
-
+    const [guesses, setGuesses] = useState([])
+    const [answer, setAnswer] = useState("color".split(""))
+    
     return {
         submit: function submit(){
-            console.log('AAA', `Why don't I have ${chars}`)
-            setGuess(chars)
-            
+            if (chars.length === 5){
+                let colors = []
+                for (let i = 0; i < chars.length; i++) {
+                    if (chars[i] == answer[i]) {
+                        colors.push("green");
+                    } else if (answer.includes(chars[i])) {
+                        colors.push("yellow");
+                    } else {
+                        colors.push("grey");
+                    }
+                }
+     
+                setGuesses([
+                    ...guesses,
+                    {
+                        chars,
+                        colors
+                    }
+                ])
+                setChars([])}
             
         },
         deleteChar: function deleteChar(){
@@ -24,7 +42,8 @@ export default function useTophersData() {
                 return [...currCharacters, newChar]
             })
         },
-        charactersTypedByUser: chars
+        charactersTypedByUser: chars,
+        guesses
     }
 }
 

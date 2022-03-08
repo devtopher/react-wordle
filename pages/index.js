@@ -7,6 +7,7 @@ import useTophersData from "./data";
 export default function Home() {
   const {
     charactersTypedByUser,
+    guesses,
     characterEntered,
     deleteChar,
     submit
@@ -18,7 +19,7 @@ export default function Home() {
     justifyContent: "between"
   }}>
     <NavBar />
-    <GameBoard characters={charactersTypedByUser} />
+    <GameBoard characters={charactersTypedByUser} guesses={guesses} />
     <Keyboard submit={submit} deleteChar={deleteChar} characterEntered={characterEntered}/>
   </div>
 }
