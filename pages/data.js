@@ -22,7 +22,7 @@ export default function useTophersData() {
                 setGuesses([
                     ...guesses,
                     {
-                        chars,
+                        characters: chars,
                         colors
                     }
                 ])
