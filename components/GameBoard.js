@@ -21,12 +21,14 @@ export default function GameBoard(props) {
                     })}
                 </div>
             })}
-            <div style={{display:"flex"}}>
-                {props.characters.map((char,i) => {
-                    return <div key={`${char}-${i}`}style={{textAlign: "center", ...GREY_STYLE}}>{char}</div>
-                })}
-                <RowBlocks numBlocks={5 - props.characters.length} />
-            </div>
+            {props.guesses.length < 6 && 
+                <div style={{display:"flex"}}>
+                    {props.characters.map((char,i) => {
+                        return <div key={`${char}-${i}`}style={{textAlign: "center", ...GREY_STYLE}}>{char}</div>
+                    })}
+                    <RowBlocks numBlocks={5 - props.characters.length} />
+                </div>
+            }
             <EmptyRows rowLength={5 - props.guesses.length}/>
         </div>
     </div>
