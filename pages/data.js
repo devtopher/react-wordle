@@ -75,7 +75,7 @@ export default function useTophersData() {
 // const userStory9 = "When the above happens, the letters also change on the visual keyboard"
 // const userStory10 = "Once my word has been evaluated and the colors are updated, I can type on a new line a new guess✅"
 // const userStory10 = "If I submit 6 times without winning, I lose"
-// const userStory10 = "My keyboard should only accept character letters"
+// const userStory10 = "My keyboard should only accept character letters"✅"
 // const userStory10 = "When I submit, my word is locked in place"
 // const userStory10 = "When I submit, my word is locked in place"
 
