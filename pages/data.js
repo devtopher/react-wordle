@@ -9,6 +9,8 @@ export default function useTophersData() {
     const [chars, setChars] = useState([])
     const [guesses, setGuesses] = useState([])
     const [answer, setAnswer] = useState("color".split(""))
+    let playerHasWon = false
+    
 
     return {
         submit: async function submit(){
@@ -35,7 +37,8 @@ export default function useTophersData() {
                         }
                     ])
                     setChars([])
-                } else {
+                    if (guesses.length == 5){console.log("Game over")}
+                } else{
                     console.log("That's not a word!")
                 }
             }
@@ -76,6 +79,6 @@ export default function useTophersData() {
 // const userStory10 = "Once my word has been evaluated and the colors are updated, I can type on a new line a new guess✅"
 // const userStory10 = "If I submit 6 times without winning, I lose"
 // const userStory10 = "My keyboard should only accept character letters"✅"
-// const userStory10 = "When I submit, my word is locked in place"
+// const userStory10 = "If I submit 6 times the game is over✅""
 // const userStory10 = "When I submit, my word is locked in place"
 
