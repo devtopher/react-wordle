@@ -8,9 +8,12 @@ function checkWord(word) {
 export default function useTophersData() {
     const [chars, setChars] = useState([])
     const [guesses, setGuesses] = useState([])
-    const [answer, setAnswer] = useState("brave".split(""))
-    let playerHasWon = false
-    
+    const [answer, setAnswer] = useState("color".split(""))
+    const [playerHasWon, setPlayerHasWon] = useState(false)
+
+    console.log({
+        playerHasWon
+    })
 
     return {
         submit: async function submit(){
@@ -28,6 +31,10 @@ export default function useTophersData() {
                             colors.push("grey");
                         }
                     }
+                    console.log(`This is the color array: ${colors}`)
+                    if(colors.every((color)=> color === "green")){
+                        setPlayerHasWon(true)
+                    }
         
                     setGuesses([
                         ...guesses,
@@ -38,6 +45,7 @@ export default function useTophersData() {
                     ])
                     setChars([])
                     if (guesses.length == 5){console.log("Game over")}
+                    
                 } else{
                     console.log("That's not a word!")
                 }
