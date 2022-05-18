@@ -8,7 +8,7 @@ function checkWord(word) {
 export default function useTophersData() {
     const [chars, setChars] = useState([])
     const [guesses, setGuesses] = useState([])
-    const [answer, setAnswer] = useState("color".split(""))
+    const [answer, setAnswer] = useState("brave".split(""))
     let playerHasWon = false
     
 
@@ -16,7 +16,7 @@ export default function useTophersData() {
         submit: async function submit(){
             if (chars.length === 5){
                 const wordResult = await checkWord(chars.join(''))
-
+                //if word is inside of the data returned from API
                 if (wordResult?.[0]?.word) {
                     let colors = []
                     for (let i = 0; i < chars.length; i++) {
@@ -43,14 +43,14 @@ export default function useTophersData() {
                 }
             }
             
-        },
+        },//enables delete functionality
         deleteChar: function deleteChar(){
             setChars(currCharacters => {
                 const newArray = [...currCharacters]
                 newArray.pop()
                 return newArray
             }) 
-        },
+        },//enables character display when new char typed
         characterEntered: (newChar) => {
             if (guesses.length < 6) {
                 setChars(currCharacters => {
@@ -80,5 +80,6 @@ export default function useTophersData() {
 // const userStory10 = "If I submit 6 times without winning, I lose"
 // const userStory10 = "My keyboard should only accept character letters"✅"
 // const userStory10 = "If I submit 6 times the game is over✅""
-// const userStory10 = "When I submit, my word is locked in place"
+// const userStory10 = "When I include the same letter twice, but it only shows up once, it should be grey in the wrong spot"
+
 
